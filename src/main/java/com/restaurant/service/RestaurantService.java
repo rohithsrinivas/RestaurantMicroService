@@ -17,5 +17,7 @@ public interface RestaurantService {
 	List<Restaurant> getRestaurantsByRestaurantAndAddressTableCount(String address, Integer tableCount);
 
 	List<Restaurant> getRestaurantsByRestaurantNameAndTableCount(String restaurantName, Integer tableCount);
+	
+	void deleteRestaurantById(Integer restaurantId);
 
 }

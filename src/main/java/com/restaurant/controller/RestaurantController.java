@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.restaurant.constants.RestaurantServiceConstants;
 import com.restaurant.model.Restaurant;
 import com.restaurant.service.RestaurantService;
 
@@ -57,6 +59,12 @@ public class RestaurantController {
 	@PutMapping(value="/update")
 	public ResponseEntity<Restaurant> updateRestaurant(@RequestBody Restaurant restaurant){
 		return new ResponseEntity<Restaurant>(restaurantService.updateRestaurant(restaurant),HttpStatus.OK);
+	}
+	
+	@DeleteMapping(value="/delete/{restaurantId}")
+	public ResponseEntity<String> deleteRestaurant(@PathVariable("restaurantId") Integer restaurantId){
+		this.restaurantService.deleteRestaurantById(restaurantId);
+		return new ResponseEntity<String>(RestaurantServiceConstants.RESTAURANT_DELETED,HttpStatus.OK);
 	}
 
 }
