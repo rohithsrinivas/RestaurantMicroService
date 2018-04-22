@@ -7,6 +7,7 @@ com\restaurant\service\RestaurantServiceImpl.class
 com\restaurant\config\RestaurantConfig.class
 com\restaurant\constants\RestaurantServiceConstants.class
 com\restaurant\microservice\RestaurantMicroServiceApplication.class
+META-INF\spring-configuration-metadata.json
 com\restaurant\model\Item.class
 com\restaurant\repo\RestaurantRepo.class
 com\restaurant\config\SecurityConfig.class
