@@ -7,6 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import com.google.gson.Gson;
 import com.restaurant.config.RestaurantConfig;
@@ -19,6 +20,7 @@ import com.restaurant.model.Table;
 
 @SpringBootApplication
 @ImportAutoConfiguration(classes= {RestaurantConfig.class})
+@EnableEurekaClient
 public class RestaurantMicroServiceApplication {
 
 	public static void main(String[] args) {
